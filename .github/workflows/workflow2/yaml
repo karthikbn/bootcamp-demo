@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          # Replace with your project's install command
+          echo "Installing dependencies"
+
+      - name: Lint
+        run: |
+          # Replace with your lint command
+          echo "Running linter"
+
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          # Replace with your project's install command
+          echo "Installing dependencies"
+
+      - name: Run tests
+        run: |
+          # Replace with your test command
+          echo "Running tests"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          # Replace with your project's install command
+          echo "Installing dependencies"
+
+      - name: Build
+        run: |
+          mkdir -p dist
+          echo "Build output" 
